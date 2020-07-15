@@ -12,6 +12,8 @@ const config = {
     appId: "1:12950208505:web:377e92912920528f344728",
     measurementId: "G-1TC9QT78RK"
 };
+
+firebase.initializeApp(config);
 //async because we're making an API request (an async operation)
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
@@ -37,8 +39,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     
     return userRef;
 };
-
-firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
